@@ -18,7 +18,7 @@
   a < 0 && "yes" || "no";
 
 // 4. Given two numbers print 1 if one of them is divisible by the other one, otherwise print 0.
-  a % b && 1 || 0
+  !(a % b) && 1 || 0
 
 // 5. Given three numbers. Find the maximum one
   (a > b) && (a > c && a || c)||(b > c && b || c)
