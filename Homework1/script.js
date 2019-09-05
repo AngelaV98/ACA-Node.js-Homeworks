@@ -18,10 +18,11 @@
   a < 0 && "yes" || "no";
 
 // 4. Given two numbers print 1 if one of them is divisible by the other one, otherwise print 0.
-  !(a % b) && 1 || 0
+  (!(a % b)||!(b % a)) && 1 || 0
 
 // 5. Given three numbers. Find the maximum one
-  (a > b) && (a > c && a || c)||(b > c && b || c)
+(a > b && ((a > c && ((a && a) || "0")) || ((c && c) || "0"))) || ((b > c && ((b && b) || "0")) || ((c && c) || "0"));
+
 
 // 6. Given string ‘test’. Use variables and string methods and print ‘tetsetesesesesteest’
 
