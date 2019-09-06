@@ -21,7 +21,7 @@
   (!(a % b)||!(b % a)) && 1 || 0
 
 // 5. Given three numbers. Find the maximum one
-(a > b && a > c && a) || (b > a && b > c && b) || (c > a && c > b && c) || "0";
+  (a >= b && a >= c && a) || (b >= a && b >= c && b) || (c >= a && c >= b && c) || "0";
 
 // (a > b && ((a > c && ((a && a) || "0")) || ((c && c) || "0"))) || ((b > c && ((b && b) || "0")) || ((c && c) || "0"));
 
