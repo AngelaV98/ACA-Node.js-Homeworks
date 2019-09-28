@@ -201,7 +201,7 @@ let book = new Book("Steppenwolf", author, 5000, 1000);
 // 	b)  test('Some Name’)
 
 //same as before
-//a) - constructor will create a new object and return it
+//a) - constructor will create a new object {fullName: `My name is Some Name`,age:5 } and return it
 //b) - function will return {age: 5}
 
 // 6.
@@ -272,7 +272,7 @@ class Car {
     this.currentPosition = 0;
   }
   start() {
-    let curPos = this.curPos;
+    let curPos = this.currentPosition;
     curPos = 0;
     if (curPos < this.finishPosition) {
       curPos = 3*this.speed / 10;
@@ -312,7 +312,7 @@ Car.prototype.reset = function() {
   this.currentPosition = 0;
 };
 Car.prototype.start = function() {
-  let curPos = this.curPos;
+  let curPos = this.currentPosition;
   if (curPos < this.finishPosition) {
     curPos = 3*this.speed / 10;
     console.log(curPos);
