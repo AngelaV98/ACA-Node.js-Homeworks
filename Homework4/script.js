@@ -260,10 +260,10 @@ let book = new Book("Steppenwolf", author, 5000, 1000);
 class Car {
   static finishPosition = 100;
 
-  constructor(name, color, currentPosition, intervalPointer, speed) {
+  constructor(name, color, intervalPointer, speed) {
     this.name = name;
     this.color = color;
-    this.currentPosition = currentPosition;
+    this.currentPosition = 0;
     this.intervalPointer = intervalPointer;
     this.speed = speed;
   }
@@ -273,7 +273,6 @@ class Car {
   }
   start() {
     let curPos = this.currentPosition;
-    curPos = 0;
     if (curPos < this.finishPosition) {
       curPos = 3*this.speed / 10;
       console.log(curPos);
@@ -293,17 +292,17 @@ let timer = setInterval(() => {
   car3.start();
 }, 300);
 
-let car1 = new Car("Toyota", "#000000", 0, timer, 10);
-let car2 = new Car("BMW", "#cccccc", 0, timer, 5);
-let car3 = new Car("Mitsubishi", "	#0000FF", 0, timer, 15);
+let car1 = new Car("Toyota", "#000000",  timer, 10);
+let car2 = new Car("BMW", "#cccccc",  timer, 5);
+let car3 = new Car("Mitsubishi", "	#0000FF",  timer, 15);
 
 // 8.
 // Write 7) with function prototype style
 
-function Car(name, color, currentPosition=0, intervalPointer, speed) {
+function Car(name, color, intervalPointer, speed) {
   this.name = name;
   this.color = color;
-  this.currentPosition = currentPosition;
+  this.currentPosition = 0;
   this.intervalPointer = intervalPointer;
   this.speed = speed;
 }
@@ -331,6 +330,6 @@ let timer = setInterval(() => {
   car3.start();
 }, 300);
 
-let car1 = new Car("Toyota", "#000000", 0, timer, 10);
-let car2 = new Car("BMW", "#cccccc", 0, timer, 5);
-let car3 = new Car("Mitsubishi", "	#0000FF", 0, timer, 15);
+let car1 = new Car("Toyota", "#000000", timer, 10);
+let car2 = new Car("BMW", "#cccccc", timer, 5);
+let car3 = new Car("Mitsubishi", "	#0000FF", timer, 15);
