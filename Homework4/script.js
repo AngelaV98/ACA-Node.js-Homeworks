@@ -292,9 +292,9 @@ let timer = setInterval(() => {
   car3.start();
 }, 300);
 
-let car1 = new Car("Toyota", "#000000",  timer, Math.random()*50+1);
-let car2 = new Car("BMW", "#cccccc",  timer, Math.random()*50+1);
-let car3 = new Car("Mitsubishi", "	#0000FF",  timer, Math.random()*50+1);
+let car1 = new Car("Toyota", "#000000",  timer, Math.floor(Math.random()*50+1));
+let car2 = new Car("BMW", "#cccccc",  timer, Math.floor(Math.random()*50+1));
+let car3 = new Car("Mitsubishi", "	#0000FF",  timer, Math.floor(Math.random()*50+1));
 
 // 8.
 // Write 7) with function prototype style
@@ -330,6 +330,6 @@ let timer = setInterval(() => {
   car3.start();
 }, 300);
 
-let car1 = new Car("Toyota", "#000000", timer, Math.random()*50+1);
-let car2 = new Car("BMW", "#cccccc", timer, Math.random()*50+1);
-let car3 = new Car("Mitsubishi", "	#0000FF", timer, Math.random()*50+1);
+let car1 = new Car("Toyota", "#000000", timer, Math.floor(Math.random()*50+1));
+let car2 = new Car("BMW", "#cccccc", timer, Math.floor(Math.random()*50+1));
+let car3 = new Car("Mitsubishi", "	#0000FF", timer, Math.random()*50+1));
