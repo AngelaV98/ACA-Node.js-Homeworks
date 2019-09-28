@@ -258,7 +258,7 @@ let book = new Book("Steppenwolf", author, 5000, 1000);
 // create function that will start car competition
 
 class Car {
-  static finishPosition = 100;
+  static finishPosition = 200;
 
   constructor(name, color, intervalPointer, speed) {
     this.name = name;
@@ -292,9 +292,9 @@ let timer = setInterval(() => {
   car3.start();
 }, 300);
 
-let car1 = new Car("Toyota", "#000000",  timer, 10);
-let car2 = new Car("BMW", "#cccccc",  timer, 5);
-let car3 = new Car("Mitsubishi", "	#0000FF",  timer, 15);
+let car1 = new Car("Toyota", "#000000",  timer, Math.random()*50+1);
+let car2 = new Car("BMW", "#cccccc",  timer, Math.random()*50+1);
+let car3 = new Car("Mitsubishi", "	#0000FF",  timer, Math.random()*50+1);
 
 // 8.
 // Write 7) with function prototype style
@@ -306,7 +306,7 @@ function Car(name, color, intervalPointer, speed) {
   this.intervalPointer = intervalPointer;
   this.speed = speed;
 }
-Car.finishPosition = 100;
+Car.finishPosition = 200;
 Car.prototype.reset = function() {
   this.currentPosition = 0;
 };
@@ -330,6 +330,6 @@ let timer = setInterval(() => {
   car3.start();
 }, 300);
 
-let car1 = new Car("Toyota", "#000000", timer, 10);
-let car2 = new Car("BMW", "#cccccc", timer, 5);
-let car3 = new Car("Mitsubishi", "	#0000FF", timer, 15);
+let car1 = new Car("Toyota", "#000000", timer, Math.random()*50+1);
+let car2 = new Car("BMW", "#cccccc", timer, Math.random()*50+1);
+let car3 = new Car("Mitsubishi", "	#0000FF", timer, Math.random()*50+1);
