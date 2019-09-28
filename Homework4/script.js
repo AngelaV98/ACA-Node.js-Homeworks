@@ -275,7 +275,7 @@ class Car {
     let curPos = this.curPos;
     curPos = 0;
     if (curPos < this.finishPosition) {
-      curPos = 3*speed / 10;
+      curPos = 3*this.speed / 10;
       console.log(curPos);
     } else {
       this.stop();
@@ -314,7 +314,7 @@ Car.prototype.reset = function() {
 Car.prototype.start = function() {
   let curPos = this.curPos;
   if (curPos < this.finishPosition) {
-    curPos = 3*speed / 10;
+    curPos = 3*this.speed / 10;
     console.log(curPos);
   } else {
     this.stop();
