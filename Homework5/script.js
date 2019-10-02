@@ -9,17 +9,10 @@ let promise = new Promise(function(resolve, reject) {
 });
 
 promise
-  .then(res => {
-    throw new Error("wooo");
-  })
+  .then(res => throw new Error("Error occured"))
   .catch(err => console.log(err));
 
-promise.then(
-  res => {
-    throw new Error("wooo");
-  },
-  err => console.log(err)
-);
+promise.then(res => throw new Error("Error occured"), err => console.log(err));
 
 // 2.
 
@@ -35,7 +28,7 @@ promise.then(
 
 new Promise(function(resolve, reject) {
   setTimeout(() => {
-    reject(new Error("Error is occured!"));
+    reject(new Error("Whoops!"));
   }, 1000);
 }).catch(alert);
 
