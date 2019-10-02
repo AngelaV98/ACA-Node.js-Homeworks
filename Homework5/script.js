@@ -1,6 +1,7 @@
 // 1.
 
-// The difference is if an error occurs in then f1 in first case the f2 function in .catch will handle the error,
+// Not equivalent
+// The difference is: if an error occurs in f1 of .then in first case the f2 function of .catch will handle the error,
 // in second case error won't be handled
 let promise = new Promise(function(resolve, reject) {
   resolve(1);
@@ -29,8 +30,7 @@ promise.then(
 //   }, 1000);
 // }).catch(alert);
 
-//catch doesn't work, because an Error is thrown in setTimeouse
-//and code execution is stopped, we must reject with that error
+//catch doesn't work, because an Error is thrown in setTimeout and code execution is stopped, we must reject with that error
 
 new Promise(function(resolve, reject) {
   setTimeout(() => {
