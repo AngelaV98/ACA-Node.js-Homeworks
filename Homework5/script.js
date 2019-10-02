@@ -1,4 +1,5 @@
 // 1.
+// promise.then(f1).catch(f2); vs promise.then(f1, f2); Is equivalent or not and why?(show example)
 
 // Not equivalent
 // The difference is: if an error occurs in f1 of .then in first case the f2 function of .catch will handle the error,
@@ -34,7 +35,7 @@ promise.then(
 
 new Promise(function(resolve, reject) {
   setTimeout(() => {
-    reject(new Error("Whoops!"));
+    reject(new Error("Error is occured!"));
   }, 1000);
 }).catch(alert);
 
