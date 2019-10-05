@@ -56,17 +56,17 @@ function yourXFunction(async1, async2, async3, someCallback) {
 const async1 = cb => {
   setTimeout(() => {
     cb(1);
-  }, 14000);
+  }, 4000);
 };
 const async2 = cb => {
   setTimeout(() => {
     cb(13);
-  }, 16000);
+  }, 6000);
 };
 const async3 = cb => {
   setTimeout(() => {
     cb(5);
-  }, 13000);
+  }, 3000);
 };
 const someCallback = val => val;
 yourXFunction(async1, async2, async3, someCallback);
@@ -113,3 +113,42 @@ function invokesAfterLastPromise(arr) {
 invokesAfterLastPromise([async1, async2, async3])
   .then(console.log)
   .catch(console.log);
+
+
+
+// 5.
+// You have some 3 async Observables. do same work(like 3 and 4) with observables
+// without using promise(only with observable methods) .
+
+const async1 = new rxjs.Observable(function(observer) {
+  setTimeout(() => {
+    observer.next(1);
+    observer.complete();
+  }, 4000);
+});
+const async2 = new rxjs.Observable(function(observer) {
+  setTimeout(() => {
+    observer.next(13);
+    observer.complete();
+
+  }, 6000);
+});
+const async3 = new rxjs.Observable(function(observer) {
+  setTimeout(() => {
+    observer.next(5);
+    observer.complete();
+
+  }, 3000);
+});
+
+rxjs.forkJoin([async1,async2, async3]).subscribe({
+  next(res) {
+    console.log(res)
+  },
+  error(err) {
+    console.error(err);
+  },
+  complete() {
+     console.log('done');
+  }
+})
