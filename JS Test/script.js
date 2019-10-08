@@ -291,32 +291,30 @@ function dbGetEmployeeWrapper(id) {
 }
 
 function printHeadOfHeadPromise(id) {
-  dbGetEmployee(id)
-    .then((err, res) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      return res;
-    })
-    .then((err, res) => {
-      dbGetEmployee(res.headId)
-        .then((err, res) => {
-          if (err) {
-            console.error(err);
-            return;
-          }
-          return res;
-        })
-        .then((err, res) => {
-          if (err) {
-            console.error(err);
-            return;
-          }
-          console.log(res);
-          return res;
-        });
-    });
+  return new Promise(function(reject, resolve) {
+    dbGetEmployee(id)
+      .then((err, res) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(res);
+      })
+      .then((err, res) => {
+        dbGetEmployee(res.headId)
+          .then((err, res) => {
+            if (err) {
+              reject(err);
+            }
+            resolve(res);
+          })
+          .then((err, res) => {
+            if (err) {
+              reject(err);
+            }
+            resolve(res);
+          });
+      });
+  });
 }
 
 async function printHeadOfHeadAsync(id) {
