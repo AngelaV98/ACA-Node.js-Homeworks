@@ -62,8 +62,8 @@ function validateAge(age) {
 
 function propGetter(key) {
   return function(object) {
-    if (key === "age") {
-      return object.info[key];
+    if(key === 'age'){
+     return object.info[key];
     }
     return object[key];
   };
@@ -75,8 +75,8 @@ function validate(propGetter, validator) {
   };
 }
 
-let getValidatedName = validate(propGetter("name"), validateName);
-let getValidatedAge = validate(propGetter("age"), validateAge);
+let getValidatedName = validate(propGetter("name"),validateName)
+let getValidatedAge = validate(propGetter("age"),validateAge);
 
 let filteredUsers = usersList.filter(elem => {
   return getValidatedName(elem) && getValidatedAge(elem);
