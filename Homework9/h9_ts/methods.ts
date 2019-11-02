@@ -1,11 +1,11 @@
-const fs = require("fs");
-const EventEmitter = require("events");
+import { readFile, writeFile } from "fs";
+import EventEmitter from "events";
 
 const path = "./users.json";
 const emitter = new EventEmitter();
 
 emitter.on("get", function getUser() {
-  fs.readFile(path, function(err, data) {
+  readFile(path, function (err: any, data: any) {
     if (err) {
       console.log(err);
     } else {
@@ -14,11 +14,12 @@ emitter.on("get", function getUser() {
   });
 });
 
-emitter.on("create", function createUser(user) {
+emitter.on("create", function createUser(user: any) {
   delete user._;
   delete user.$0;
   console.log(user);
-  fs.readFile(path, function(err, data) {
+
+  readFile(path, function (err: any, data: any) {
     if (err) {
       console.log(err);
     } else {
@@ -30,7 +31,7 @@ emitter.on("create", function createUser(user) {
       }
       data.push(user);
       data = JSON.stringify(data);
-      fs.writeFile(path, data, function(err, data) {
+      writeFile (path, data, function (err: any) {
         if (err) {
           console.log(err);
         } else {
@@ -45,18 +46,18 @@ emitter.on("update", function updateUser(user) {
   delete user._;
   delete user.$0;
 
-  fs.readFile(path, function(err, data) {
+  readFile(path, function (err: any, data: any) {
     if (err) {
       console.log(err);
     } else {
       data = JSON.parse(data);
       for (let i = 0; i < data.length; i++) {
-        if (data[i].id === user.id) {
+        if (data[i].id == user.id) {
           data[i] = JSON.stringify(user);
           data[i] = JSON.parse(data[i]);
         }
       }
-      fs.writeFile(path, JSON.stringify(data), function(err, data) {
+      writeFile (path, JSON.stringify(data), function (err: any) {
         if (err) {
           console.log(err);
         } else {
@@ -67,12 +68,12 @@ emitter.on("update", function updateUser(user) {
   });
 });
 emitter.on("delete", function deleteUser({ id }) {
-  fs.readFile(path, function(err, data) {
+  readFile(path, function (err: any, data: any) {
     if (err) {
       console.log(err);
     } else {
-      data = JSON.parse(data).filter(elem => elem.id !== id);
-      fs.writeFile(path, JSON.stringify(data), function(err, data) {
+      data = JSON.parse(data).filter((elem: any) => elem.id != id);
+      writeFile (path, JSON.stringify(data), function (err: any) {
         if (err) {
           console.log(err);
         } else {
@@ -83,4 +84,4 @@ emitter.on("delete", function deleteUser({ id }) {
   });
 });
 
-module.exports = emitter;
+export default emitter;
