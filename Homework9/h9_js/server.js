@@ -3,7 +3,7 @@
 // and will be save data in some json file.
 const yargs = require("yargs");
 
-const emitter = require("./methods.js");
+const emitter = require("./methods");
 
 yargs.options({
   id: { type: "number", describe: "user id" },

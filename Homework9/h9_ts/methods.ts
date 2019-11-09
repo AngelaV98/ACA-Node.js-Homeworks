@@ -17,7 +17,6 @@ emitter.on("get", function getUser() {
 emitter.on("create", function createUser(user: any) {
   delete user._;
   delete user.$0;
-  console.log(user);
 
   readFile(path, function (err: any, data: any) {
     if (err) {
