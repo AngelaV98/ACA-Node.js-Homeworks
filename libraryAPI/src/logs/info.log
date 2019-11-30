@@ -1,0 +1,1 @@
+{"message":"::ffff:127.0.0.1 - - [30/Nov/2019:19:51:27 +0000] \"GET /api/book HTTP/1.1\" 200 111 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36\"\n","level":"info"}
