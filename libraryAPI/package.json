@@ -2,14 +2,19 @@
   "name": "library",
   "version": "1.0.0",
   "description": "Library API",
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.4.1"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "jest"
   },
   "author": "AV",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.7.13",
     "morgan": "^1.9.1",
@@ -17,13 +22,21 @@
   },
   "devDependencies": {
     "jest": "^24.9.0",
-    "nodemon": "^2.0.1",
     "supertest": "^4.0.2"
   },
-  "jest":{
+  "jest": {
     "testEnvironment": "node",
-    "coveragePathIgnorePatterns":[
+    "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
+  },
+  "start:prod": {
+    "command": "node index.js",
+    "env": {
+      "NODE_PATH": "/",
+      "NODE_ENV": "production",
+      "PORT": 8080,
+      "BROWSER": "none"
+    }
   }
 }

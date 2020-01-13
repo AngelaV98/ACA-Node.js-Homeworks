@@ -1,0 +1,11 @@
+.page-link{
+    cursor: pointer;
+}
+.dots{
+    pointer-events: none;
+}
+
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+}

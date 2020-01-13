@@ -1,0 +1,9 @@
+.ErrorIndicator{
+    text-align: center;
+}
+.ErrorIndicator h2{
+    color: darkred;
+}
+.ErrorIndicator img{
+    width: 60px;
+}

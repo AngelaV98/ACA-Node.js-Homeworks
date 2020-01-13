@@ -1,0 +1,11 @@
+c.Select{
+    width: 10%!important;
+}
+.Select select,.Select option{
+    background-color: #20374a;
+    color: #eee;
+}
+.Select select:focus{
+    background-color: #20374a;
+    color: #eee;
+}

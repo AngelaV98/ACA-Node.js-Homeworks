@@ -1,0 +1,23 @@
+.Search{
+    display: flex;
+    background-color: #20374a;
+    padding: 0.5em;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.Search-icon{
+    width: 20px;
+}
+
+.Search-panel{
+    padding-left: 0.5em;
+    width: 100%;
+    border: none;
+    color: #eee;
+    background-color: transparent;
+    outline: none;
+}
+.Search-panel::placeholder{
+    color:#aaa;
+}

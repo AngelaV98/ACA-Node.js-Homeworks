@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const winston = require("./src/config/winston");
 const db = require("./src/db/db.js");
@@ -8,6 +9,7 @@ const authorRouter = require("./src/routers/author");
 
 const app = express();
 
+app.use(cors());
 app.use(morgan("combined", { stream: winston.stream }));
 
 app.use(express.json());
