@@ -3,6 +3,11 @@ import axios from "axios";
 export default class CryptoCurrencyService {
   base_url = "https://api.udilia.com/coins/v1";
 
+  constructor() {
+    this.getCryptoCurrencyById = this.getCryptoCurrencyById.bind(this);
+    this.getCryptoCurrencies = this.getCryptoCurrencies.bind(this);
+  }
+
   // Get currencies by page and perPage query params
   async getCryptoCurrencies(page = 1, perPage = 5) {
     return await axios.get(
@@ -19,6 +24,7 @@ export default class CryptoCurrencyService {
   }
   // Get currency by id
   async getCryptoCurrencyById(id) {
+    console.log(await axios.get(`${this.base_url}/cryptocurrencies/${id}`));
     return await axios.get(`${this.base_url}/cryptocurrencies/${id}`);
   }
   // Get autocomplete
